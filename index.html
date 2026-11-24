@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kabe's Birthday: Chapter 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+<canvas id="rain"></canvas><canvas id="petal"></canvas>
+
+<div id="gate">
+  <p class="ch">CHAPTER 1</p>
+  <h1>Kabe's<br>Birthday</h1>
+  <button class="btn" id="start">Tap to begin</button>
+  <p class="small">Sound on is best. Find the 7 hidden letters ✉</p>
+</div>
+
+<div id="hud">
+  <button id="count" aria-label="Open found letters">✉ 0/7</button>
+  <button id="snd" aria-label="Toggle sound">🔊</button>
+  <div id="bar"></div>
+</div>
+
+<main>
+<section class="panel tall dots">
+  <div class="ch">CHAPTER 1</div>
+  <h1>Kabe's<br>Birthday</h1>
+  <div class="cap tw">A story about a very cute girl who will not share her ice cream.</div>
+  <p class="sfx tw">scroll down...</p>
+  <button class="egg" style="right:.4rem;bottom:.4rem" data-i="0" aria-label="A small envelope">✉</button>
+</section>
+
+<section class="panel">
+  <p class="sfx tw">drip... drip...</p>
+  <div class="cap tw">Lately, the rain hasn't stopped.</div>
+  <div class="cap r tw">Even so, she kept going.</div>
+  <button class="egg" style="left:.3rem;top:.3rem" data-i="1" aria-label="A small envelope">✉</button>
+</section>
+
+<section class="panel">
+  <div class="cap tw">Everyone carries something heavy. She carries hers quietly, and still worries about everyone else.</div>
+  <p class="sfx tw">...</p>
+  <button class="egg" style="right:.3rem;top:.3rem" data-i="2" aria-label="A small envelope">✉</button>
+</section>
+
+<section class="panel tall dots" style="text-align:center">
+  <div class="cap tw">But then, something small happened.</div>
+  <div class="cap tw">Someone wanted to make the rain stop for her.</div>
+  <button id="hold">Hold<br>to help</button>
+  <p class="sfx" id="holdmsg">press and hold the circle</p>
+</section>
+
+<div id="after" hidden>
+<section class="panel tall">
+  <div class="cap tw">The rain stopped. The sky turned the color of her favorite chapter.</div>
+  <div class="cap r tw">And the petals began to fall.</div>
+  <button class="egg" style="right:.3rem;bottom:.3rem" data-i="3" aria-label="A small envelope">✉</button>
+</section>
+
+<section class="panel">
+  <div class="ch">CHARACTER PROFILE: KABE</div>
+  <div class="stat"><span>Kindness</span><b>999</b><div class="bar"><i style="--v:100%"></i></div></div>
+  <div class="stat"><span>Cuteness (annoying)</span><b>100</b><div class="bar"><i style="--v:100%"></i></div></div>
+  <div class="stat"><span>Motherly energy</span><b>MAX</b><div class="bar"><i style="--v:100%"></i></div></div>
+  <div class="stat"><span>Sharing ice cream</span><b>3</b><div class="bar"><i style="--v:3%"></i></div></div>
+  <button class="egg" style="right:.3rem;top:.3rem" data-i="4" aria-label="A small envelope">✉</button>
+</section>
+
+<section class="panel tall dots" style="text-align:center">
+  <div class="cap tw">A famous scene: Alok asks for ice cream.</div>
+  <div class="cap r" id="say">Alok: Kabe, can I have some ice cream? 🥺</div>
+  <button id="ice" aria-label="Ask for ice cream">🍦</button>
+  <p class="sfx" id="tries">tap the ice cream to ask</p>
+  <button class="egg" style="left:.3rem;bottom:.3rem" data-i="5" aria-label="A small envelope">✉</button>
+</section>
+
+<section class="panel letter">
+  <div class="ch">A LETTER FOR KABE</div>
+  <p class="tw" data-s="16">Kabe, you give me a hard time. Every single day. And somehow I love you for it. Because of you, I get to do something useful for someone who matters this much to me. If this site makes you smile for even one minute, it has done everything I wanted.</p>
+  <p class="tw" data-s="16">You're sweet, you're funny, and you're annoyingly cute (yes, annoyingly). You're gentle and caring like a mom, the kind who fusses over me but still will not give me ice cream when I ask. 🍦 Not once. I remember every refusal. But I forgive you, because you deserve the best of everything, and I hope you become the happiest, strongest woman you can be.</p>
+  <p class="tw sign" data-s="16">I love you my little girl i know you are a day older than me but yea you still da cutest girl so yea be happy carry on your life cause I won't be alive after some days or weeks so yea just be happy keep smiling ok love you from you bacha Alok</p>
+</section>
+
+<section class="panel tall dots" style="text-align:center;align-items:center" data-end="1">
+  <h1>To be continued...</h1>
+  <div class="cap tw">Kabe's next chapter is going to be better.</div>
+  <button class="btn" id="open">Author's notes</button>
+  <div id="note" class="cap">Author's note: thank you for being exactly who you are. Did you find all 7 letters?</div>
+  <button class="egg" style="right:.3rem;bottom:.3rem" data-i="6" aria-label="A small envelope">✉</button>
+</section>
+</div>
+</main>
+
+<div id="modal" role="dialog" aria-modal="true"><div class="box"><div id="mt"></div><button class="btn" id="close">Close</button></div></div>
+<script src="script.js"></script>
+</body>
+</html>

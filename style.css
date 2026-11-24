@@ -1,0 +1,59 @@
+:root{--ink:#2d2640;--paper:#fffafc;--pink:#ffb7d0;--lav:#cdbcff}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Gowun Batang",Georgia,serif;color:var(--ink);font-size:18px;line-height:1.7;background:#4a5578}
+body.locked{overflow:hidden}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:1;width:100%;height:100%}
+main{position:relative;z-index:2;max-width:30rem;margin:0 auto;padding:3.4rem 1rem 5rem}
+h1{font-size:2.6rem;line-height:1.15}
+button{font:inherit;cursor:pointer}
+.ch{font:600 .85rem Figtree,sans-serif;color:#8a6fd6;margin-bottom:.5rem}
+.small{font:.85rem Figtree,sans-serif;color:var(--lav);margin-top:1rem}
+
+#gate{position:fixed;inset:0;z-index:20;background:#2f3652;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;transition:opacity .8s}
+#gate .ch{color:var(--lav)}
+#gate.off{opacity:0;pointer-events:none}
+.btn{font:600 1rem Figtree,sans-serif;background:var(--ink);color:#fff;border:0;border-radius:99px;padding:.8rem 1.5rem;margin-top:1.2rem}
+#gate .btn{background:#ffe9a8;color:var(--ink)}
+.btn:focus-visible,.egg:focus-visible,#hold:focus-visible{outline:3px solid #8a6fd6}
+
+#hud{position:fixed;top:0;left:0;right:0;z-index:8;display:flex;justify-content:flex-end;gap:.5rem;padding:.6rem}
+#hud button{background:var(--paper);border:2px solid var(--ink);border-radius:99px;padding:.15rem .8rem;font:600 .85rem Figtree,sans-serif}
+#bar{position:absolute;left:0;top:0;height:4px;width:0;background:var(--pink)}
+
+.panel{position:relative;background:var(--paper);border:3px solid var(--ink);border-radius:6px;padding:2rem 1.4rem;margin:0 0 1.6rem;min-height:15rem;display:flex;flex-direction:column;justify-content:center;box-shadow:6px 6px 0 rgba(45,38,64,.35);clip-path:inset(0 0 100% 0)}
+.panel.in{clip-path:inset(-4px -12px -12px -4px);transition:clip-path .7s ease}
+.panel.tall{min-height:26rem}
+.dots{background-image:radial-gradient(rgba(205,188,255,.55) 1.5px,transparent 1.6px);background-size:10px 10px}
+.cap{background:#fff;border:2px solid var(--ink);padding:.7rem 1rem;margin:.4rem 0;max-width:92%}
+.cap.r{align-self:flex-end;text-align:left}
+.tw{opacity:0}.tw.on{opacity:1}
+.tw .h{visibility:hidden}
+.sfx{font:600 .95rem Figtree,sans-serif;color:#9b86e0;letter-spacing:.2em;margin:.6rem 0}
+.letter p+p{margin-top:1rem}
+.sign{font-weight:700}
+
+.egg{position:absolute;background:none;border:0;font-size:1.3rem;opacity:.6;padding:.5rem;line-height:1;animation:bob 3s ease-in-out infinite}
+.egg.found{opacity:.15;pointer-events:none;animation:none}
+@keyframes bob{50%{transform:translateY(-3px)}}
+
+#hold{width:7rem;height:7rem;border-radius:50%;border:3px solid var(--ink);background:conic-gradient(var(--pink) var(--p,0deg),#fff 0);font:600 .9rem Figtree,sans-serif;color:var(--ink);touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;align-self:center;margin:1rem 0}
+#hold.done{background:var(--pink)}
+
+.stat{display:grid;grid-template-columns:1fr auto;gap:.1rem .5rem;margin-bottom:.8rem;font-size:.95rem}
+.stat b{font-family:Figtree,sans-serif}
+.bar{grid-column:1/3;height:.7rem;border:2px solid var(--ink);background:#fff}
+.bar i{display:block;height:100%;width:0;background:var(--pink);transition:width 1.6s ease .4s}
+.in .bar i{width:var(--v)}
+
+#ice{font-size:5rem;background:none;border:0;align-self:center;line-height:1.2;transition:transform .1s}
+#ice:active{transform:scale(.9) rotate(-8deg)}
+.pop{animation:pop .35s}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.08)}}
+
+#note{display:none}
+#modal{position:fixed;inset:0;z-index:30;background:rgba(45,38,64,.6);display:none;align-items:center;justify-content:center;padding:1.2rem}
+#modal.on{display:flex}
+#modal .box{background:var(--paper);border:3px solid var(--ink);border-radius:6px;padding:1.6rem;max-width:24rem;max-height:80vh;overflow:auto;box-shadow:6px 6px 0 var(--pink);animation:pop .35s}
+#modal hr{border:0;border-top:1px dashed var(--lav);margin:.8rem 0}
+
+@media (prefers-reduced-motion:reduce){.panel{clip-path:none}.egg,.pop,#modal .box{animation:none}}
